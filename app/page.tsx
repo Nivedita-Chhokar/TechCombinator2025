@@ -5,7 +5,7 @@ export default async function HomePage() {
   const supabase = createServerSupabaseClient()
   const {
     data: { session },
-  } = await supabase.auth.getSession()
+  } = await (await supabase).auth.getSession()
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4 text-center">

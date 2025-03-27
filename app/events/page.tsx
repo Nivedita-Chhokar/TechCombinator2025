@@ -3,7 +3,7 @@ import Link from "next/link"
 import Header from "@/components/header"
 
 export default async function EventsPage() {
-  const supabase = createServerSupabaseClient()
+  const supabase = await createServerSupabaseClient()
 
   // Get upcoming events
   const { data: events } = await supabase.from("events").select("*").order("start_date", { ascending: true })

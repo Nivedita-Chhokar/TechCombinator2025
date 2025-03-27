@@ -2,7 +2,7 @@ import { createServerSupabaseClient } from "@/lib/supabase/server"
 import Link from "next/link"
 
 export default async function DashboardPage() {
-  const supabase = createServerSupabaseClient()
+  const supabase = await createServerSupabaseClient()
 
   // Get current user
   const {

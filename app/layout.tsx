@@ -1,11 +1,12 @@
-import type React from "react"
-import "./globals.css"
-import type { Metadata } from "next"
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Tech Combinator",
-  description: "A platform for tech collaboration and mentorship",
-    generator: 'v0.dev'
+  title: 'My App',
+  description: 'My Next.js application',
 }
 
 export default function RootLayout({
@@ -14,12 +15,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="bg-black text-white">{children}</body>
+    // Add suppressHydrationWarning to the html element
+    <html lang="en" suppressHydrationWarning>
+      {/* Add suppressHydrationWarning to the body element as well */}
+      <body className={inter.className} suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   )
 }
-
-
-
-import './globals.css'

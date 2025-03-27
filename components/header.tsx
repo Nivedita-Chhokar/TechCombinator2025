@@ -6,11 +6,11 @@ export default async function Header() {
   const supabase = createServerSupabaseClient()
   const {
     data: { session },
-  } = await supabase.auth.getSession()
+  } = await (await supabase).auth.getSession()
 
   let user = null
   if (session) {
-    const { data } = await supabase.from("users").select("*").eq("id", session.user.id).single()
+    const { data } = await (await supabase).from("users").select("*").eq("id", session.user.id).single()
 
     user = data
   }

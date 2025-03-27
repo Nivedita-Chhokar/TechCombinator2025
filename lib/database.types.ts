@@ -331,8 +331,60 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        profiles: {
+          Row: {
+            id: string
+            user_id: string
+            full_name: string
+            avatar_url: string | null
+            title: string | null
+            location: string | null
+            bio: string | null
+            website: string | null
+            github: string | null
+            linkedin: string | null
+            skills: string[] | null
+            interests: string[] | null
+            visibility: string
+            created_at: string
+            updated_at: string
+          }
+          Insert: {
+            id?: string
+            user_id: string
+            full_name: string
+            avatar_url?: string | null
+            title?: string | null
+            location?: string | null
+            bio?: string | null
+            website?: string | null
+            github?: string | null
+            linkedin?: string | null
+            skills?: string[] | null
+            interests?: string[] | null
+            visibility?: string
+            created_at?: string
+            updated_at?: string
+          }
+          Update: {
+            id?: string
+            user_id?: string
+            full_name?: string
+            avatar_url?: string | null
+            title?: string | null
+            location?: string | null
+            bio?: string | null
+            website?: string | null
+            github?: string | null
+            linkedin?: string | null
+            skills?: string[] | null
+            interests?: string[] | null
+            visibility?: string
+            created_at?: string
+            updated_at?: string
+          }
+        }
       }
     }
   }
 }
-

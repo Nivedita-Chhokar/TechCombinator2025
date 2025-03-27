@@ -3,7 +3,7 @@ import Link from "next/link"
 import Header from "@/components/header"
 
 export default async function AnnouncementsPage() {
-  const supabase = createServerSupabaseClient()
+  const supabase = await createServerSupabaseClient()
 
   // Get announcements
   const { data: announcements } = await supabase

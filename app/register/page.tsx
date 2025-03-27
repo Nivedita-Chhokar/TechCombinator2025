@@ -7,7 +7,7 @@ export default async function RegisterPage() {
   const supabase = createServerSupabaseClient()
   const {
     data: { session },
-  } = await supabase.auth.getSession()
+  } = await (await supabase).auth.getSession()
 
   if (session) {
     redirect("/dashboard")
